@@ -37,7 +37,7 @@ if option == "Wydźwięk emocjonalny tekstu (eng)":
 if option == "Tłumaczenie tekstu (eng to de)":
     text = st.text_area(label="Wpisz tekst")
     if text:
-        with st.spinner('Tłumaczę tekst...'):
+        with st.spinner('Tłumaczę...'):
                 translator = pipeline("translation_en_to_de")
                 answer = translator(text, max_length=512)
                 st.success('Tłumaczenie zakończone!')
