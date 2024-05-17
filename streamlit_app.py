@@ -3,52 +3,18 @@ import pandas as pd
 import time
 import matplotlib as plt
 import os
-# zaczynamy od zaimportowania bibliotek
 
 st.success('Gratulacje! uruchomiono aplikację')
-# streamlit jest wykorzystywany do tworzenia aplikacji
-# z tego powodu dobrą praktyką jest informowanie użytkownika o postępie, błędach, etc.
-
-# Inne przykłady do wypróbowania:
-# st.balloons() # animowane balony ;)
-# st.error('Błąd!') # wyświetla informację o błędzie
-# st.warning('Ostrzeżenie, działa, ale chyba tak sobie...')
-# st.info('Informacja...')
-# st.success('Udało się!')
-
-# st.spinner()
-# with st.spinner(text='Pracuję...'):
-    # time.sleep(2)
-    # st.success('Done')
-# możemy dzięki temu "ukryć" późniejsze ładowanie aplikacji
 
 st.title('Lab05. Translator')
-# # title, jak sama nazwa wskazuje, używamy do wyświetlenia tytułu naszej aplikacji
 
-# st.subheader('O Streamlit')
-# # subheader to jeden z podtytułów w`ykorzystywnaych w Streamlit
 
-#st.text('To przykładowa aplikacja z wykorzystaniem Streamlit do tłumaczenie języka angielskiego na niemiecki')
-# # text używamy do wyświetlenia dowolnego tekstu. Można korzystać z polskich znaków.
+st.write('Przykładowa aplikacja z wykorzystaniem Streamlit')
+st.write('Aplikacja służy do tłumaczenie języka angielskiego na niemiecki oraz oceny czy dane słowo jest pozytywne czy negatywne')
 
-st.write('Przykładowa aplikacja z wykorzystaniem Streamlit służy do tłumaczenie języka angielskiego na niemiecki oraz oceny czy dane słowo jest pozytywne czy negatywne')
-# # write używamy również do wyświetlenia tekstu, różnica polega na formatowaniu.
-
-# st.code("st.write()", language='python')
-# # code może nam się czasami przydać, jeżeli chcielibyśmy pokazać np. klientowi fragment kodu, który wykorzystujemy w aplikacji
-
-# with st.echo():
-#     st.write("Echo")
-# # możemy też to zrobić prościej używając echo - pokazujemy kod i równocześnie go wykonujemy
-
-# df = pd.read_csv("DSP_4.csv", sep = ';')
-# st.dataframe(df)
-# musimy tylko pamiętać o właściwym określeniu separatora (w tym wypadku to średnik)
-# masz problem z otworzeniem pliku? sprawdź w jakim katalogu pracujesz i dodaj tam plik (albo co bardziej korzystne - zmień katalog pracy)
-# os.getcwd() # pokaż bieżący katalog
-# os.chdir("") # zmiana katalogu
-
-st.header('Przetwarzanie języka naturalnego')
+st.write('1. wybierz opcja tłumaczenia lub wydźwięku emocjonalnego')
+st.write('2. wpisz słowo lub zdanie')
+st.write('3. wciśnij kombinacje ctrl+enter by zatwierdzić')
 
 import streamlit as st
 from transformers import pipeline
@@ -72,14 +38,11 @@ if option == "Tłumaczenie tekstu (eng to de)":
     text = st.text_area(label="Wpisz tekst")
     if text:
         with st.spinner('Tłumaczę tekst...'):
-            try:
                 translator = pipeline("translation_en_to_de")
                 answer = translator(text, max_length=512)
                 st.success('Tłumaczenie zakończone!')
-                st.snow()  # Efekt balonów po zakończeniu tłumaczenia
+                st.snow()
                 st.write(answer[0]['translation_text'])
-            except Exception as e:
-                st.error(f'Wystąpił nieoczekiwany błąd: {e}')
             
 st.subheader('s22484')
 # st.subheader('Zadanie do wykonania')
