@@ -13,8 +13,8 @@ st.image("Niemcy123.jpg", use_column_width=True)
 st.write('Przykładowa aplikacja z wykorzystaniem Streamlit')
 st.write('Aplikacja służy do tłumaczenie języka angielskiego na niemiecki oraz wydźwięku tekstu')
 
-st.write('1. wybierz opcja tłumaczenia lub wydźwięku emocjonalnego')
-st.write('2. wpisz słowo lub zdanie')
+st.write('1. wybierz opcje tłumaczenia lub wydźwięku emocjonalnego')
+st.write('2. wpisz tekst')
 st.write('3. wciśnij kombinacje ctrl+enter by zatwierdzić')
 
 import streamlit as st
