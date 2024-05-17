@@ -40,7 +40,7 @@ if option == "Tłumaczenie tekstu (eng to de)":
         with st.spinner('Tłumaczę...'):
                 translator = pipeline("translation_en_to_de")
                 answer = translator(text, max_length=512)
-                st.success('Tłumaczenie zakończone!')
+                st.success('Tłumaczenie zakończone sukcesem!')
                 st.snow()
                 st.write(answer[0]['translation_text'])
             
