@@ -7,7 +7,23 @@ import os
 st.success('Gratulacje! uruchomiono aplikację')
 
 st.title('Lab05. Translator')
+background_image = 'Niemcy123.jpg'
 
+# CSS to set the background image
+page_bg_img = f'''
+<style>
+body {{
+    background-image: url("{background_image}");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+}}
+</style>
+'''
+
+# Apply the CSS
+st.markdown(page_bg_img, unsafe_allow_html=True)
 
 st.write('Przykładowa aplikacja z wykorzystaniem Streamlit')
 st.write('Aplikacja służy do tłumaczenie języka angielskiego na niemiecki oraz oceny czy dane słowo jest pozytywne czy negatywne')
