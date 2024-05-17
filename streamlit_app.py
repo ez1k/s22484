@@ -11,7 +11,7 @@ st.title('Lab05. Translator')
 st.image("Niemcy123.jpg", use_column_width=True)
 
 st.write('Przykładowa aplikacja z wykorzystaniem Streamlit')
-st.write('Aplikacja służy do tłumaczenie języka angielskiego na niemiecki oraz oceny czy dane słowo jest pozytywne czy negatywne')
+st.write('Aplikacja służy do tłumaczenie języka angielskiego na niemiecki oraz wydźwięku tekstu')
 
 st.write('1. wybierz opcja tłumaczenia lub wydźwięku emocjonalnego')
 st.write('2. wpisz słowo lub zdanie')
